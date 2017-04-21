@@ -7,6 +7,12 @@ var makeHTMLfriendly = function (string){
   return withNoCommas;
 }
 
+function makeHTMLfriendlyName(name){
+  var result = makeHTMLfriendly(name);
+  // TODO manipulate here or just make this the same as makeHTMLfriendly
+  return result;
+}
+
 function findAndReplace(string, target, replacement) {
   var i = 0, length = string.length;
   for (i; i < length; i++) {
