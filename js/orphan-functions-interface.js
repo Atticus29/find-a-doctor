@@ -1,8 +1,8 @@
 var makeHTMLfriendly = function (string){
-  var addressWithNoSpaces = findAndReplace(address, " ", "%20N%20");
-  var addressWithNoCommas = findAndReplace(addressWithNoSpaces, ",", "%2C%20");
+  var withNoSpaces = findAndReplace(string, " ", "%20N%20");
+  var withNoCommas = findAndReplace(withNoSpaces, ",", "%2C%20");
+  return withNoCommas;
 }
-
 
 function findAndReplace(string, target, replacement) {
   var i = 0, length = string.length;
@@ -10,4 +10,13 @@ function findAndReplace(string, target, replacement) {
     string = string.replace(target, replacement);
   }
   return string;
+}
+
+function makeDoctorsOfJSON(jsonResponse){
+  var doctorArray = [];
+
+}
+
+function displayError(error){
+  console.log(error);
 }
