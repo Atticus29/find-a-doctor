@@ -1,4 +1,5 @@
 var Practice = require('../js/practice.js').practiceModule;
+var Doctor = require('../js/doctor.js').doctorModule;
 
 var makeHTMLfriendly = function (string){
   var withNoSpaces = findAndReplace(string, " ", "%20N%20");
@@ -15,11 +16,17 @@ function findAndReplace(string, target, replacement) {
 }
 
 function makeObjectsFromJSON(jsonResponse){
+  practiceDoctorPairObjectArray = [];
+  var doctorArray = [];
   jsonResponse.data.forEach((obj)=>{
-    console.log(obj);
-    makePracticesFromJSON(obj);
-
+    // console.log(obj);
+    var practices = makePracticesFromJSON(obj);
+    var currentDoctor = makeDoctorFromJSON(obj);
+    doctorArray.push(currentDoctor);
+    var currentPracticeDoctorPair = {doctor: currentDoctor, practices: practices};
+    practiceDoctorPairObjectArray.push(currentPracticeDoctorPair);
   });
+  console.log(practiceDoctorPairObjectArray);
 }
 
 function makePracticesFromJSON(obj){
@@ -30,6 +37,12 @@ function makePracticesFromJSON(obj){
   })
   // console.log(practiceArray);
   return practiceArray;
+}
+
+function makeDoctorFromJSON(obj){
+  var currentDoctor = new Doctor(obj.profile.first_name, obj.profile.last_name, obj.profile.title, obj.profile.bio, obj.profile.gender, obj.profile.image_url, obj.profile.languages);
+  // console.log(currentDoctor);
+  return currentDoctor;
 }
 
 function displayError(error){

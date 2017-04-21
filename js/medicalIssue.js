@@ -1,6 +1,6 @@
 var apiKey = require('../.env').apiKey;
 
-MedicalIssue = function(htmlFriendlySymptom){
+MedicalIssue = function(htmlFriendlySymptom, htmlFriendlyDocName){
   this.htmlFriendlySymptom = htmlFriendlySymptom;
 }
 

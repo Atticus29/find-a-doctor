@@ -13,4 +13,10 @@ $(()=>{
     // console.log(searchResults);
     $("#search-results-section").show();
   });
+  $("#doctor-form").submit(()=>{
+    event.preventDefault();
+    var name = $("doctor-name").val();
+    var htmlFriendlyName = makeHTMLfriendlyName(name);
+
+  });
 });
