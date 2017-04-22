@@ -21,18 +21,19 @@ function findAndReplace(string, target, replacement) {
   return string;
 }
 
-function makeObjectsFromJSON(jsonResponse){
-  practiceDoctorPairObjectArray = [];
-  var doctorArray = [];
+function renderHTMLfromJSON(jsonResponse){
+  // practiceDoctorPairObjectArray = [];
+  // var doctorArray = [];
   jsonResponse.data.forEach((obj)=>{
-    // console.log(obj);
     var practices = makePracticesFromJSON(obj);
     var currentDoctor = makeDoctorFromJSON(obj);
-    doctorArray.push(currentDoctor);
-    var currentPracticeDoctorPair = {doctor: currentDoctor, practices: practices};
-    practiceDoctorPairObjectArray.push(currentPracticeDoctorPair);
+    $("#doc-table").empty();
+    addHeaderRowToTable("doc-table");
+    // doctorArray.push(currentDoctor);
+    // var currentPracticeDoctorPair = {doctor: currentDoctor, practices: practices};
+    // practiceDoctorPairObjectArray.push(currentPracticeDoctorPair);
   });
-  console.log(practiceDoctorPairObjectArray);
+  // console.log(practiceDoctorPairObjectArray);
 }
 
 function makePracticesFromJSON(obj){
@@ -53,4 +54,27 @@ function makeDoctorFromJSON(obj){
 
 function displayError(error){
   console.log(error);
+}
+
+function addHeaderRowToTable(tableId){
+  var headerRowHTML = "<thead><tr>" +
+  "<th>Doctor</th>" +
+  "<th>Gender</th>"+
+  "<th>Short Biography</th>"+
+  "<th>Practices</th>"+
+  "</tr></thead>";
+  $("#" + tableId).append(headerRowHTML);
+}
+
+function addDocToTable(doctorObj, practicesArray, tableId){
+  var rowHTML = "<tr>" +
+  "<th>" + currentDoctor.first + " " + currentDoctor.last + ", " + currentDoctor.title + "</th>" +
+  "<th>" + currentDoctor.gender + "</th>" +
+    "<th>" + currentDoctor.bio + "</th>" +
+    "<th>" +
+      "<span class='click-for-more'>Places of Practice</span>" +
+    "</th>" +
+  "</tr>";
+//TODO ATTN LEFT OFF HERE
+// var rowHTML = docPracticePairObj
 }
