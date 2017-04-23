@@ -9,10 +9,14 @@ $(()=>{
     var name = $("#doctor-name").val();
     var htmlFriendlyName = makeHTMLfriendlyName(name);
     var currentmedicalQuery = new medicalQuery(htmlFriendlySymptom, htmlFriendlyName);
-    currentmedicalQuery.processLocation(address, processLocationAPIqueryResults, handleErrorInDOM, makeHTMLfriendly).then(jsonResponse =>{
+    currentmedicalQuery.processLocation(address, processLocationAPIqueryResults, handleErrorInDOM, makeHTMLfriendly)
+    .then(jsonResponse =>{
       var htmlFriendlyLocation = processLocationAPIqueryResults(jsonResponse);
       console.log(htmlFriendlyLocation);
       currentmedicalQuery.processSearch(htmlFriendlyLocation, 100, renderHTMLfromJSON, handleErrorInDOM);
+    })
+    .fail(jsonResponse =>{
+      handleErrorInDOM();
     });
     $("#search-results-section").show();
   });
