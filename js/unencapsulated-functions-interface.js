@@ -58,6 +58,7 @@ function handleErrorInDOM(){
   $("#form-section").hide();
   $("#search-results-section").hide();
   $("#error-results-section").show();
+  setInterval(()=>{location.reload(true);}, 3000);
 }
 
 function addHeaderRowToTable(tableId){
@@ -95,5 +96,5 @@ function handleNoMatches(){
   $("#form-section").hide();
   $("#search-results-section").hide();
   $("#empty-search-results-section").show();
-  setInterval(()=>{location.reload(true);}, 3000)
+  setInterval(()=>{location.reload(true);}, 3000);
 }
