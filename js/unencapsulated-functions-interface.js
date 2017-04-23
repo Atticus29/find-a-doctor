@@ -79,3 +79,11 @@ function addDocToTable(doctorObj, practicesArray, tableId){
   "</tr>";
   $("#" + tableId).append(rowHTML);
 }
+
+function processLocationAPIqueryResults(jsonResponse){
+  var unprocessedLocation = jsonResponse.results[0].geometry.location.lat + "," + jsonResponse.results[0].geometry.location.lng;
+  // console.log(unprocessedLocation);
+  var withNoSpaces = findAndReplace(unprocessedLocation, " ", "%20N%20");
+  var htmlFriendlyLocation = findAndReplace(withNoSpaces, ",", "%2C");
+  return htmlFriendlyLocation;
+}
