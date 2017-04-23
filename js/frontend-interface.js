@@ -13,4 +13,7 @@ $(()=>{
     var searchResults = currentmedicalQuery.processSearch(htmlFriendlyLocation, 100, renderHTMLfromJSON, displayError);
     $("#search-results-section").show();
   });
+  $("#refresh-button").click(()=>{
+    location.reload(true);
+  });
 });

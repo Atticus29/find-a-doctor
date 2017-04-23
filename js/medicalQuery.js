@@ -17,6 +17,8 @@ medicalQuery.prototype.processSearch = function(htmlFriendlyLocation, searchRadi
     // TODO both are null!!
   }
 
+  // TODO add address ajax request to get location
+
   return $.ajax({
      type: "GET",
      url: queryString,
