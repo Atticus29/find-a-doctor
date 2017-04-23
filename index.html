@@ -19,22 +19,22 @@
         <label for="medical-issue">Describe a symptom</label>
         <input type="text" name="medical-issue" id="medical-issue" value="cancer" class="form-control">
         <label for="doctor-name">AND/OR search for a doctor</label>
-        <input type="text" name="doctor-name" id="doctor-name" value="Strauss" class="form-control">
+        <input type="text" name="doctor-name" id="doctor-name" value="Harder" class="form-control">
         <!-- TODO add e.g. to the values above -->
         <button id="search-button" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
       </form>
     </div>
     <div id="search-results-section">
       <hr>
-      <table id="whole-display-table">
-        <thead>
+      <table id="whole-display-table" class="table-fill">
+        <thead id="make-black">
           <th>Picture</th>
           <th>Doctor</th>
           <th>Gender</th>
           <th>Short Biography</th>
           <th>Practices</th>
         </thead>
-        <tbody id="doc-table">
+        <tbody id="doc-table" class="table-hover">
         </tbody>
       </table>
       <img src="" alt="">
