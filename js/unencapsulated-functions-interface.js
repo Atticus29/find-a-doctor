@@ -23,7 +23,10 @@ function findAndReplace(string, target, replacement) {
 
 function renderHTMLfromJSON(jsonResponse){
   $("#doc-table").empty();
-  // addHeaderRowToTable("doc-table");
+  console.log(jsonResponse.data);
+  if(jsonResponse.data.length===0){
+    handleNoMatches();
+  }
   jsonResponse.data.forEach((obj)=>{
     var practices = makePracticesFromJSON(obj);
     var currentDoctor = makeDoctorFromJSON(obj);
@@ -86,4 +89,11 @@ function processLocationAPIqueryResults(jsonResponse){
   var withNoSpaces = findAndReplace(unprocessedLocation, " ", "%20N%20");
   var htmlFriendlyLocation = findAndReplace(withNoSpaces, ",", "%2C");
   return htmlFriendlyLocation;
+}
+
+function handleNoMatches(){
+  $("#form-section").hide();
+  $("#search-results-section").hide();
+  $("#empty-search-results-section").show();
+  setInterval(()=>{location.reload(true);}, 3000)
 }

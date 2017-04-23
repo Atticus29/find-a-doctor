@@ -9,7 +9,6 @@ $(()=>{
     var name = $("#doctor-name").val();
     var htmlFriendlyName = makeHTMLfriendlyName(name);
     var currentmedicalQuery = new medicalQuery(htmlFriendlySymptom, htmlFriendlyName);
-    // var htmlFriendlyLocation = "37.773%2C-122.413";
     currentmedicalQuery.processLocation(address, processLocationAPIqueryResults, handleErrorInDOM, makeHTMLfriendly).then(jsonResponse =>{
       var htmlFriendlyLocation = processLocationAPIqueryResults(jsonResponse);
       console.log(htmlFriendlyLocation);

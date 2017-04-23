@@ -12,7 +12,7 @@ medicalQuery.prototype.processLocation = function(address, processLocationAPIque
      type: "GET",
      url: queryString,
      dataType: "json",
-     success: processLocationAPIqueryResults,
+     success: processLocationAPIqueryResults, //TODO figure out why this is doing nothing
      error: handleErrorInDOM
    });
 }
@@ -29,14 +29,13 @@ medicalQuery.prototype.processSearch = function(htmlFriendlyLocation, searchRadi
     handleErrorInDOM();
   }
 
-  // TODO add address ajax request to get location
   // TODO add conditions query https://api.betterdoctor.com/2016-03-01/conditions?user_key=1b2466a811c284accd592c0c354b142e to get all conditions
 
   return $.ajax({
      type: "GET",
      url: queryString,
      dataType: "json",
-     success: renderHTMLfromJSON,
+     success: renderHTMLfromJSON, //TODO figure out why this is doing nothing
      error: handleErrorInDOM
    });
 }
