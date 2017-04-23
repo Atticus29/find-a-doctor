@@ -23,7 +23,7 @@ function findAndReplace(string, target, replacement) {
 
 function renderHTMLfromJSON(jsonResponse){
   $("#doc-table").empty();
-  addHeaderRowToTable("doc-table");
+  // addHeaderRowToTable("doc-table");
   jsonResponse.data.forEach((obj)=>{
     var practices = makePracticesFromJSON(obj);
     var currentDoctor = makeDoctorFromJSON(obj);
@@ -68,7 +68,8 @@ function addHeaderRowToTable(tableId){
 }
 
 function addDocToTable(doctorObj, practicesArray, tableId){
-  var rowHTML = "<tr>" +
+  var rowHTML = "<tr><th><img src='"+
+  doctorObj.image +"' alt='doctor-pic'></th>" +
   "<th>" + doctorObj.first + " " + doctorObj.last + ", " + doctorObj.title + "</th>" +
   "<th>" + doctorObj.gender + "</th>" +
   "<th>" + doctorObj.bio + "</th>" +

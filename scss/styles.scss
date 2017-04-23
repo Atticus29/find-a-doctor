@@ -44,7 +44,8 @@ table {
 }
 
 th {
-	background: linear-gradient(#777, #444);
+	background: #777;
+  // linear-gradient(#777, #444);
 	border-left: 1px solid #555;
 	border-right: 1px solid #777;
 	border-top: 1px solid #555;
@@ -58,7 +59,8 @@ th {
 }
 
 th:after {
-	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	background: rgba(255,255,255,0);
+  // linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
 	content: '';
 	display: block;
 	height: 25%;
