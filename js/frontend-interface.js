@@ -3,6 +3,7 @@ var medicalQuery = require('../js/medicalQuery.js').medicalQueryModule;
 $(()=>{
   $("#medical-info-form").submit(()=>{
     event.preventDefault();
+    var address = $("#user-address").val();
     var symptom = $("#medical-issue").val();
     var htmlFriendlySymptom = makeHTMLfriendly(symptom);
     var name = $("#doctor-name").val();
