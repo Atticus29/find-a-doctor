@@ -10,7 +10,7 @@ $(()=>{
     var htmlFriendlyName = makeHTMLfriendlyName(name);
     var currentmedicalQuery = new medicalQuery(htmlFriendlySymptom, htmlFriendlyName);
     var htmlFriendlyLocation = "37.773%2C-122.413";
-    var searchResults = currentmedicalQuery.processSearch(htmlFriendlyLocation, 100, renderHTMLfromJSON, displayError);
+    var searchResults = currentmedicalQuery.processSearch(htmlFriendlyLocation, 100, renderHTMLfromJSON, handleErrorInDOM);
     $("#search-results-section").show();
   });
   $("#refresh-button").click(()=>{

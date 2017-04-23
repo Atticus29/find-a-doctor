@@ -22,12 +22,12 @@ function findAndReplace(string, target, replacement) {
 }
 
 function renderHTMLfromJSON(jsonResponse){
+  $("#doc-table").empty();
+  addHeaderRowToTable("doc-table");
   jsonResponse.data.forEach((obj)=>{
     var practices = makePracticesFromJSON(obj);
     var currentDoctor = makeDoctorFromJSON(obj);
-    $("#doc-table").empty();
-    addHeaderRowToTable("doc-table");
-    // addDocToTable(currentDoctor, practices, "doc-table");
+    addDocToTable(currentDoctor, practices, "doc-table");
   });
 }
 
@@ -69,9 +69,9 @@ function addHeaderRowToTable(tableId){
 
 function addDocToTable(doctorObj, practicesArray, tableId){
   var rowHTML = "<tr>" +
-  "<th>" + currentDoctor.first + " " + currentDoctor.last + ", " + currentDoctor.title + "</th>" +
-  "<th>" + currentDoctor.gender + "</th>" +
-  "<th>" + currentDoctor.bio + "</th>" +
+  "<th>" + doctorObj.first + " " + doctorObj.last + ", " + doctorObj.title + "</th>" +
+  "<th>" + doctorObj.gender + "</th>" +
+  "<th>" + doctorObj.bio + "</th>" +
   "<th>" +
   "<span class='click-for-more'>Places of Practice</span>" +
   "</th>" +
