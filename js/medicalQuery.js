@@ -14,7 +14,7 @@ medicalQuery.prototype.processSearch = function(htmlFriendlyLocation, searchRadi
   } else if(this.htmlFriendlyDocName && this.htmlFriendlySymptom){
     queryString = "https://api.betterdoctor.com/2016-03-01/doctors?name=" + this.htmlFriendlyDocName + "&query=" + this.htmlFriendlySymptom + "&location=" + htmlFriendlyLocation +"%2C"+ searchRadius + "&user_location=" + htmlFriendlyLocation + "&skip=0&limit=10&user_key=" + apiKey;
   }else{
-    // TODO both are null!!
+    handleErrorInDOM();
   }
 
   // TODO add address ajax request to get location

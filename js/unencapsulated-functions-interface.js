@@ -51,6 +51,12 @@ function displayError(error){
   console.log(error);
 }
 
+function handleErrorInDOM(){
+  $("#form-section").hide();
+  $("#search-results-section").hide();
+  $("#error-results-section").show();
+}
+
 function addHeaderRowToTable(tableId){
   var headerRowHTML = "<thead><tr>" +
   "<th>Doctor</th>" +
