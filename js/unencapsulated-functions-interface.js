@@ -55,20 +55,11 @@ function displayError(error){
 }
 
 function handleErrorInDOM(){
+  $("#top").hide();
   $("#form-section").hide();
   $("#search-results-section").hide();
   $("#error-results-section").show();
-  setInterval(()=>{location.reload(true);}, 3000);
-}
-
-function addHeaderRowToTable(tableId){
-  var headerRowHTML = "<thead><tr>" +
-  "<th>Doctor</th>" +
-  "<th>Gender</th>"+
-  "<th>Short Biography</th>"+
-  "<th>Practices</th>"+
-  "</tr></thead>";
-  $("#" + tableId).append(headerRowHTML);
+  setInterval(()=>{location.reload(true);}, 6000);
 }
 
 function addDocToTable(doctorObj, practicesArray, tableId){
@@ -76,7 +67,7 @@ function addDocToTable(doctorObj, practicesArray, tableId){
   doctorObj.image +"' alt='doctor-pic'></th>" +
   "<th>" + doctorObj.first + " " + doctorObj.last + ", " + doctorObj.title + "</th>" +
   "<th>" + doctorObj.gender + "</th>" +
-  "<th>" + doctorObj.bio + "</th>" +
+  "<th class='biography-col'>" + doctorObj.bio + "</th>" +
   "<th>" +
   "<span class='click-for-more'>Places of Practice</span>" +
   "</th>" +
@@ -93,8 +84,9 @@ function processLocationAPIqueryResults(jsonResponse){
 }
 
 function handleNoMatches(){
+  $("#top").hide();
   $("#form-section").hide();
   $("#search-results-section").hide();
   $("#empty-search-results-section").show();
-  setInterval(()=>{location.reload(true);}, 3000);
+  setInterval(()=>{location.reload(true);}, 6000);
 }
