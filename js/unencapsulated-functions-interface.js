@@ -67,10 +67,10 @@ function addDocToTable(doctorObj, practicesArray, tableId){
   doctorObj.image +"' alt='doctor-pic'></th>" +
   "<th>" + doctorObj.first + " " + doctorObj.last + ", " + doctorObj.title + "</th>" +
   "<th>" + doctorObj.gender + "</th>" +
-  "<th class='biography-col'>" + doctorObj.bio + "</th>" +
-  "<th>" +
-  "<span class='click-for-more'>Places of Practice</span>" +
-  "</th>" +
+  "<th class='biography-col'>" + "..." + doctorObj.bio.substring(50,130) + "..." + "</th>" +
+  // "<th>" +
+  // "<span class='click-for-more'>Places of Practice</span>" +
+  // "</th>" +
   "</tr>";
   $("#" + tableId).append(rowHTML);
 }

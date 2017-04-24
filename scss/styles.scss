@@ -15,7 +15,7 @@ hr{
 
 #empty-search-results-section{
   display: none;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.8) 100%),url("../img/doc_bg.jpg");
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.8) 100%),url("./../../img/doc_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -42,6 +42,7 @@ label{
   margin-bottom: 12px;
   margin-top: 12px;
 }
+
 
 div.table-title {
    display: block;
@@ -176,26 +177,4 @@ td.text-center {
 
 td.text-right {
   text-align: right;
-}
-
-// .container{
-//   padding-left: 0;
-//   padding-right: 0;
-// }
-
-
-// .biography-col{
-//   width: 700px;
-// }
-
-table{
-  font-size: 5;
-  width: 2000px;
-}
-
-tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
-  border-bottom: 1px solid #22262e;
 }
